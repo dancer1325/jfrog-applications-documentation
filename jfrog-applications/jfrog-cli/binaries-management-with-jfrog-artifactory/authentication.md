@@ -1,30 +1,38 @@
-# Authentication
+# Authentication | Artifactory
 ## Overview
-When used with Artifactory, JFrog CLI offers several means of authentication: JFrog CLI does not support accessing Artifactory without authentication.
 
-## Authenticating with Username and Password / API Key
+* ⚠️MANDATORY⚠️
 
-To authenticate yourself using your JFrog login credentials, either configure your credentials once using the **jf c add** command or provide the following option to each command.
+## Authenticating -- via -- Username and Password / API Key
+
+* `jf c add`
+  * allows
+    * authenticate 1! yourself -- via -- your JFrog login credentials
 
 | Command option | Description                                                           |
 |----------------|-----------------------------------------------------------------------|
-| `--url`        | JFrog Artifactory API endpoint URL. It usually ends with /artifactory |
+| `--url`        | JFrog Artifactory API endpoint URL <br/> USUALLY "*/artifactory"      |
 | `--user`       | JFrog username                                                        |
 | `--password`   | JFrog password or API key                                             |
 
-For enhanced security, when JFrog CLI is configured to use a username and password / API key, it automatically generates an access token to authenticate with Artifactory. The generated access token is valid for one hour only. JFrog CLI automatically refreshed the token before it expires. The **jf c add** command allows disabling this functionality. This feature is currently not supported by commands which use external tools or package managers or work with JFrog Distribution.
+* 👀AUTOMATICALLY generates an access token 👀
+  * Reason: 🧠enhanced security 🧠
+  * 1 hour valid
+  * 👀BEFORE it expires, JFrog CLI AUTOMATICALLY refresh the token 👀
+    * if you want -> you can disable it
 
 ## Authenticating with an Access Token
 
-To authenticate yourself using an Artifactory Access Token, either configure your Access Token once using the **jf c add** command or provide the following option to each command.
+* `jf c add`
 
 | Command option   | Description                                                           |
 |------------------|-----------------------------------------------------------------------|
-| `--url`          | JFrog Artifactory API endpoint URL. It usually ends with /artifactory |
+| `--url`          | JFrog Artifactory API endpoint URL <br/> USUALLY "*/artifactory"      |
 | `--access-token` | JFrog access token                                                    |
 
 ## Authenticating with RSA Keys
 
+* TODO:
 ***
 
 **Note**
