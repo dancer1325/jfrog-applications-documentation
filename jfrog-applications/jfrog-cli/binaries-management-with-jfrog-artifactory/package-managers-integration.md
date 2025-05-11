@@ -2,11 +2,22 @@
 
 ## Running Maven Builds
 
-JFrog CLI includes integration with Maven, allowing you to resolve dependencies and deploy build artifacts from and to Artifactory, while collecting build-info and storing it in Artifactory.
+* JFrog CLI integrates -- with -- Maven
+  * allowing you to
+    * resolve dependencies
+    * deploy build artifacts from & to Artifactory
+    * collecting build-info
+    * storing it | Artifactory
 
 ### Setting maven repositories
 
-Before using the **jf mvn** command, the project needs to be pre-configured with the Artifactory server and repositories, to be used for building and publishing the project. The **jf mvn-config** command should be used once to add the configuration to the project. The command should run while inside the root directory of the project. The configuration is stored by the command in the **.jfrog** directory at the root directory of the project.
+* `jf mvn-config`
+  * add the configuration | project
+    * == ⚠️REQUIRED to make it as FIRST STEP ⚠️
+    * configuration will be stored | root directory's ".jfrog"  
+    * run | root directory
+  * uses
+    * 1!
 
 |                             |                                                                                                                                                                                                                                                                   |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -14,7 +25,7 @@ Before using the **jf mvn** command, the project needs to be pre-configured with
 | Abbreviation                | mvnc                                                                                                                                                                                                                                                              |
 | **Command options:**        |                                                                                                                                                                                                                                                                   |
 | `--global`                  | <p>[Optional]<br>Set to true, if you'd like the configuration to be global (for all projects on the machine). Specific projects can override the global configuration.</p>                                                                                        |
-| `--server-id-resolve`       | <p>[Optional]<br>Server ID for resolution. The server should configured using the 'jf rt c' command.</p>                                                                                                                                                          |
+| `--server-id-resolve`       | <p>[Optional]<br>Server ID for resolution <br/> configure the server -- via -- `jf rt c`                                                                                                                                                          |
 | `--server-id-deploy`        | <p>[Optional]<br>Server ID for deployment. The server should be configured using the 'jf rt c' command.</p>                                                                                                                                                       |
 | `--repo-resolve-releases`   | <p>[Optional]<br>Resolution repository for release dependencies.</p>                                                                                                                                                                                              |
 | `--repo-resolve-snapshots`  | <p>[Optional]<br>Resolution repository for snapshot dependencies.</p>                                                                                                                                                                                             |
@@ -28,11 +39,13 @@ Before using the **jf mvn** command, the project needs to be pre-configured with
 
 ### Running maven
 
-The **mvn** command triggers the maven client, while resolving dependencies and deploying artifacts from and to Artifactory.
+* `jf mvn`
+  * triggers the maven client
+  * resolve dependencies
+  * deploy artifacts from & to Artifactory
+  * build & publish the project
 
-> **Note**: Before running the **mvn** command on a project for the first time, the project should be configured with the **jf mvn-config** command.
-
-> **Note**: If the machine running JFrog CLI has no access to the internet, make sure to read the [Downloading the Maven and Gradle Extractor JARs](package-managers-integration.md#downloading-the-maven-and-gradle-extractor-jars) section.
+* if the machine / run JFrog CLI has NO access to internet -> see [Downloading the Maven and Gradle Extractor JARs](package-managers-integration.md#downloading-the-maven-and-gradle-extractor-jars)
 
 #### Commands Params
 
@@ -54,11 +67,12 @@ The following table lists the command arguments and flags:
 
 #### Deploying Maven Artifacts
 
-The deployment to Artifacts is triggered both by the deployment and install phases. To disable artifacts deployment, add **-Dartifactory.publish.artifacts=false** to the list of goals and options. For example: "**jf mvn clean install -Dartifactory.publish.artifacts=false**"
+* deployment phase & install phase
+  * deploy Artifacts 
+* if you want to disable artifacts deployment -> add `-Dartifactory.publish.artifacts=false`
+  * _Example:_ `jf mvn clean install -Dartifactory.publish.artifacts=false`
 
 #### Example
-
-Run clean and install with maven.
 
 ```
 jf mvn clean install -f /path/to/pom.xml
