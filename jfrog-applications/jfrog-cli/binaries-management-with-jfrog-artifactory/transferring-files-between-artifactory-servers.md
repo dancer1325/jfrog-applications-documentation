@@ -2,12 +2,20 @@
 
 ## Overview
 
-The transfer-files command allows transferring (copying) all the files stored in one Artifactory instance to a different Artifactory instance. The command allows transferring the files stored in a single or multiple repositories. The command expects the relevant repository to already exist on the target instance and have the same name and type as the repositories on the source.
+* transfer-files command
+  * allows
+    * transferring (copying) ALL files | Artifactory instance -- to a -- DIFFERENT Artifactory instance
+      * ALSO ALL files stored | >=1 repositories
+  * ⚠️requirements ⚠️
+    * exist repository | target instance
+    * repository
+      * name | target == name | source
+      * type | target == type | source
 
 ## Limitations
 
-1. Artifacts in remote repositories caches are not transferred.
-2. The files transfer process allows transferring files that were created or modified on the source instance after the process started. However, files that were deleted on the source instance after the process started, are not deleted on the target instance by the process.
+1. ❌Artifacts | remote repositories caches are NOT transferred❌
+2. TODO:The files transfer process allows transferring files that were created or modified on the source instance after the process started. However, files that were deleted on the source instance after the process started, are not deleted on the target instance by the process.
 3. The files transfer process allows transferring files that were created or modified on the source instance after the process started. The custom properties of those files are also updated on the target instance. However, if only the custom properties of those file were modified on the source, but not the files' content, the properties are not modified on the target instance by the process.
 4. The source and target repositories should have the same name and type.
 5. Since the file are pushed from the source to the target instance, the source instance must have network connection to the target.
