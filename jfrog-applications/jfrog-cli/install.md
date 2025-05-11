@@ -4,11 +4,18 @@
 
 ### Overview
 
-JFrog CLI v2 was launched in July 2021. It includes changes to the functionality and usage of some of the legacy JFrog CLI commands. The changes are the result of feedback we received from users over time through GitHub, making the usage and functionality easier and more intuitive. For example, some of the default values changed, and are now more consistent across different commands. We also took this opportunity for improving and restructuring the code, as well as replacing old and deprecated functionality.
+* JFrog CLI v2
+  * launched | July 2021
+  * vs v1
+    * changes | functionality & usage
+      * -- based on -- community feedback
+      * _Example:_ default values / MORE consistent ACROSS DIFFERENT commands
+    * breaking changes
 
-Most of the changes included in v2 are breaking changes compared to the v1 releases. We therefore packaged and released these changes under JFrog CLI v2, allowing users to migrate to v2 only when they are ready.
-
-New enhancements to JFrog CLI are planned to be introduced as part of V2 only. V1 receives very little development attention nowadays. We therefore encourage users who haven't yet migrated to V2, to do so.
+* JFrog CLI v1
+  * little development
+  * recommendations
+    * migrate to V2
 
 ### List of changes in JFrog CLI v2
 
@@ -51,15 +58,21 @@ New enhancements to JFrog CLI are planned to be introduced as part of V2 only. V
 
 ## Installation
 
-To download the executable, please visit the [JFrog CLI Download Site](https://www.jfrog.com/getcli/).
+* ways
+  * download [JFrog CLI executable](https://www.jfrog.com/getcli/)
+  * download the sources | [JFrog CLI Project](https://github.com/JFrog/jfrog-cli-go) & build JFrog CLI
 
-You can also download the sources from the [JFrog CLI Project](https://github.com/JFrog/jfrog-cli-go) on GitHub where you will also find instructions on how to build JFrog CLI.
+* `jfrog`
+  * == JFrog CLI's executable LEGACY name
+  * recommendations
+    * migrate to `jf`
 
-The legacy name of JFrog CLI's executable is _**jfrog**_. In an effort to make the CLI usage easier and more convenient, we recently exposed a series of new installers, which install JFrog CLI with the new _**jf**_ executable name. For backward compatibility, the old installers will remain available. We recommend however migrating to the newer _**jf**_ executable name.
+* `jf`
+  * == JFrog CLI's executable NEW name
 
 ### JFrog CLI v2 "jf" installers
 
-The following installers are available for JFrog CLI v2. These installers make JFrog CLI available through the _**jf**_ executable.
+* installers / JFrog CLI available -- through -- `jf` executable
 
 #### Debian
 
