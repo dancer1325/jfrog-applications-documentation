@@ -1,14 +1,21 @@
 # JFrog Platform Configuration
 
-## Web Login to the JFrog Platform
+## log in | JFrog Platform -- via -- Web Login 
 
-You can use the `jf login` command to authenticate with the JFrog Platform through the web browser. This command is solely interactive, meaning it does not receive any options and cannot be used in a CI server.
+* `jf login`
+  * authenticate | JFrog Platform 💡-- via -- web browser💡
+  * NOT accept options
+  * uses
+    * ❌NOT | CI server ❌
 
 ![](../../../.gitbook/assets/login-page.png) ![](../../../.gitbook/assets/login-successful.png)
 
-## Creating Access Tokens
+## Creating Access Tokens -- `jf atc` -- 
 
-This command allows creating [Access Tokens](https://jfrog.com/help/r/jfrog-platform-administration-documentation/access-tokens) for users in the JFrog Platform. By default, a user-scoped token will be created. Administrators may provide the scope explicitly with '--scope', or implicitly with '--groups', '--grant-admin'.
+* allows
+  * creating users' [Access Tokens](https://jfrog.com/help/r/jfrog-platform-administration-documentation/access-tokens) | JFrog Platform
+* by default, user-scoped token 
+* Administrators may provide the scope explicitly with '--scope', or implicitly with '--groups', '--grant-admin'.
 
 ### Commands Params
 
